@@ -2,11 +2,13 @@ package mortuusterra;
 
 import java.util.logging.Logger;
 
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class Main extends JavaPlugin {
+import mortuusterra.listeners.player.BiomeListener;
 
-	private Main plugin;
+public class Main extends JavaPlugin {
+	private PluginManager plugin = getServer().getPluginManager();
 	
 
 	private Logger logger = Logger.getLogger("Minecraft");
@@ -14,11 +16,9 @@ public class Main extends JavaPlugin {
 	public void onEnable() {
 		logger.info("|---------|");
 		// initiateManagers();
-		// registerListeners();
+		 registerListeners();
 
 		// saveDefaultConfig()
-
-		setInstance(this);
 
 		mkdir();
 
@@ -41,12 +41,8 @@ public class Main extends JavaPlugin {
 			
 		}
 	}
-
-	public Main getInstance() {
-		return plugin;
-	}
-
-	public void setInstance(Main instance) {
-		this.plugin = instance;
+	
+	private void registerListeners() {
+		(plugin).registerEvents(new BiomeListener(), this);
 	}
 }
