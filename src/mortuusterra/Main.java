@@ -5,9 +5,10 @@ import java.util.logging.Logger;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import mortuusterra.listeners.player.BiomeListener;
+import mortuusterra.timers.RadiationTimer;
 
 public class Main extends JavaPlugin {
+	@SuppressWarnings("unused")
 	private PluginManager plugin = getServer().getPluginManager();
 	
 
@@ -17,6 +18,8 @@ public class Main extends JavaPlugin {
 		logger.info("|---------|");
 		// initiateManagers();
 		 registerListeners();
+		 
+		 getServer().getScheduler().scheduleSyncRepeatingTask(this, new RadiationTimer(this), 0L, 20L);
 
 		// saveDefaultConfig()
 
@@ -43,6 +46,6 @@ public class Main extends JavaPlugin {
 	}
 	
 	private void registerListeners() {
-		(plugin).registerEvents(new BiomeListener(), this);
+
 	}
 }
