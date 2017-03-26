@@ -7,7 +7,7 @@
 
 settings:
   worlds:
-    enabled: world,world2
+    enabled: world1, world2
     border:
       enabled: true
       size: 2000

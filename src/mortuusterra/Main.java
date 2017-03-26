@@ -9,10 +9,12 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import mortuusterra.listeners.world.WorldListener;
 import mortuusterra.managers.ConfigManager;
 import mortuusterra.managers.FileManager;
 import mortuusterra.managers.SupplyDropManager;
 import mortuusterra.timers.RadiationTimer;
+import mortuusterra.timers.SupplyDropTimer;
 
 public class Main extends JavaPlugin {
 	@SuppressWarnings("unused")
@@ -25,7 +27,7 @@ public class Main extends JavaPlugin {
 	// private SpawnListener spawnListener;
 	// private ChatListener chatListener;
 	// private PlayerListener playerListener;
-	// private WorldListener worldListener;
+	private WorldListener worldListener;
 	// private GECKListener geckListener;
 
 	// private CommandManager commandManager;
@@ -56,6 +58,7 @@ public class Main extends JavaPlugin {
 		registerListeners();
 
 		getServer().getScheduler().scheduleSyncRepeatingTask(this, new RadiationTimer(this), 0L, 20L);
+		getServer().getScheduler().scheduleSyncRepeatingTask(this, new SupplyDropTimer(this), 0L, 24000L);
 
 		// saveDefaultConfig()
 
@@ -110,7 +113,7 @@ public class Main extends JavaPlugin {
 		// spawnListener = new SpawnListener(instance);
 		// chatListener = new ChatListener(instance);
 		// playerListener = new PlayerListener(instance);
-		// worldListener = new WorldListener(instance);
+		worldListener = new WorldListener(this);
 		// geckListener = new GECKListener(instance);
 
 		// event listeners
@@ -124,8 +127,7 @@ public class Main extends JavaPlugin {
 		// this);
 		// getServer().getPluginManager().registerEvents(this.playerListener,
 		// this);
-		// getServer().getPluginManager().registerEvents(this.worldListener,
-		// this);
+		getServer().getPluginManager().registerEvents(this.worldListener, this);
 		// getServer().getPluginManager().registerEvents(this.geckListener,
 		// this);
 
@@ -257,13 +259,13 @@ public class Main extends JavaPlugin {
 		return playerListener;
 
 	}
-
+**/
 	public WorldListener getWorldListener() {
 
 		return worldListener;
 
 	}
-**/
+
 	@EventHandler
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
 
