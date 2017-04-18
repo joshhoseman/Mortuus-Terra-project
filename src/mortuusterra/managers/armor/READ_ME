@@ -11,7 +11,7 @@
 
 # Tier1 = leather armor Chest (ONLY)
 # Tier2 = iron Chest + leather armor FULL (ONLY)
-# tier3 = iron Chest, Legs + leather armor enchanted FULL (ONLY)
+# tier3 = iron Chest + iron Legs + leather armor FULL (ONLY)
 
 # Tier4 = iron armor FULL (only)
 # Tier5 = iron armor FULL, ** CHEST has to be infused with 4 RedStone dust. 
@@ -19,17 +19,14 @@
 # Tier6 = iron armor FULL, ** CHEST has to be infused with 4 GlowStone dust. 
           (this is craftable only with a Tier6 Chest) **
 
-# Tier7 = iron armor Enchanted FULL, ** CHEST + LEGS have to be infused with 8 GlowStone dust,
-          or 4 RedStone dust. 
+# Tier7 = iron armor  FULL, ** CHEST + LEGS have to be infused with 4 RedStone dust. 
           (this is craftable only with a Tier7 Chest + LEGS) **
           
-# Tier8 = gold armor FULL, ** CHEST + LEGS have to be infused with 8 GlowStone dust,
-          or 2 RedStone dust. 
+# Tier8 = gold armor FULL, ** CHEST + LEGS have to be infused with 4 RedStone dust. 
           (this is craftable only with a Tier8 Chest + LEGS) **
           
-# Tier9 = diamond armor FULL, ** ALL have to be infused with 8 GlowStone dust,
-          or 8 RedStone dust. 
+# Tier9 = diamond armor FULL, ** ALL have to be infused with 8 RedStone dust. 
           (this is craftable only with a Tier8 Chest + LEGS) **
           
-### NOTE To Server Admin, make it harder to get RedStone and GlowStone.
-### RedStone + GlowStone Will be a rare iten in LootChests!
+### NOTE To Server Admin, make it harder to get RedStone.
+### RedStone Will be a rare item in LootChests!
