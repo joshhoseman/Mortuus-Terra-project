@@ -1,0 +1,35 @@
+## Note To Others
+
+# The Tier of the item will be given in the Loor of the item.
+
+# these Packages represent the 8 Tiers of Radiation absorbing armor.
+# Tier1-3 are craftable, each more difficult then the other. 
+# Tier4-6 can be found in LootChests, each more rare then the other.
+# Tier7-9 can be found by fighting special mobs/Bosses in a RAD Zone, or collecting Special LootChests.
+
+# Remember that this is not normal armor, it has to be combined with things(Need to specify).
+
+# Tier1 = leather armor Chest (ONLY)
+# Tier2 = iron Chest + leather armor FULL (ONLY)
+# tier3 = iron Chest, Legs + leather armor enchanted FULL (ONLY)
+
+# Tier4 = iron armor FULL (only)
+# Tier5 = iron armor FULL, ** CHEST has to be infused with 4 RedStone dust. 
+          (this is craftable only with a Tier5 Chest) **
+# Tier6 = iron armor FULL, ** CHEST has to be infused with 4 GlowStone dust. 
+          (this is craftable only with a Tier6 Chest) **
+
+# Tier7 = iron armor Enchanted FULL, ** CHEST + LEGS have to be infused with 8 GlowStone dust,
+          or 4 RedStone dust. 
+          (this is craftable only with a Tier7 Chest + LEGS) **
+          
+# Tier8 = gold armor FULL, ** CHEST + LEGS have to be infused with 8 GlowStone dust,
+          or 2 RedStone dust. 
+          (this is craftable only with a Tier8 Chest + LEGS) **
+          
+# Tier9 = diamond armor FULL, ** ALL have to be infused with 8 GlowStone dust,
+          or 8 RedStone dust. 
+          (this is craftable only with a Tier8 Chest + LEGS) **
+          
+### NOTE To Server Admin, make it harder to get RedStone and GlowStone.
+### RedStone + GlowStone Will be a rare iten in LootChests!
