@@ -9,6 +9,7 @@ public class SupplyDropTimer implements Runnable {
 
 	public SupplyDropTimer(Main plugin) {
 		this.plugin = plugin;
+		run();
 
 	}
 
