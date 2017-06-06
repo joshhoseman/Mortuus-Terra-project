@@ -1,23 +1,15 @@
 package mortuusterra.managers;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
-import org.bukkit.Location;
-import org.bukkit.block.Chest;
-
-import mortuusterra.Main;
-import mortuusterra.objects.supplydrops.SupplyDrops;
-
-public class SupplyDropManager {
-
+public class OLDSupplyDropManager {
+	/*
+	 * This is a old file, go to
+	 * mortuusterra.managers.supplydrops.SupplyDropsManager; 
+	 * For the new File
+	 */
+/*
 	Main plugin;
-	
+
 	private List<SupplyDrops> supplyDrops;
 
 	public SupplyDropManager(Main plugin) {
@@ -210,5 +202,5 @@ public class SupplyDropManager {
 		supplyDrops.remove(supplyDrop);
 
 	}
-
+*/
 }

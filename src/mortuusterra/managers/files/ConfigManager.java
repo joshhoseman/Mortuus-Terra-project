@@ -1,16 +1,9 @@
-package mortuusterra.managers;
+package mortuusterra.managers.files;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.ItemStack;
-
 import mortuusterra.Main;
-import mortuusterra.objects.supplydrops.SupplyDropContents;
 
 public class ConfigManager {
 
@@ -22,8 +15,6 @@ public class ConfigManager {
 		config = plugin.getConfig();
 
 		configFile = new File(plugin.getDataFolder() + File.separator + "config.yml");
-
-		supplyDropsContents = new ArrayList<SupplyDropContents>();
 
 		initializeConfig();
 
@@ -82,7 +73,6 @@ public class ConfigManager {
 	// supply drops
 	public boolean supplyDropsEnabled;
 	public double supplyDropsChance;
-	public List<SupplyDropContents> supplyDropsContents;
 
 	// survival kits
 	public boolean survivalKitsEnabled;
@@ -161,20 +151,6 @@ public class ConfigManager {
 		radiationDamageIncreaseFromStorms = config
 				.getDouble("settings.radiation.damage.damage-chance.increase-from-storms");
 
-		// supply drops
-		supplyDropsEnabled = config.getBoolean("settings.supply-drops.enabled");
-		supplyDropsChance = config.getDouble("settings.supply-drops.supply-drop-chance");
-
-		for (String key : config.getConfigurationSection("settings.supply-drops.items").getKeys(false)) {
-
-			int itemId = config.getInt("settings.supply-drops.items." + key + ".item-id");
-			int itemQuantity = config.getInt("settings.supply-drops.items." + key + ".quantity");
-			double itemChance = config.getDouble("settings.supply-drops.items." + key + ".chance");
-
-			supplyDropsContents.add(new SupplyDropContents(itemId, itemQuantity, itemChance));
-
-		}
-
 		// survival kits
 		survivalKitsEnabled = config.getBoolean("settings.survival-kits.enabled");
 		survivalKitsHoursBetween = config.getInt("settings.survival-kits.hours-between-kits");
@@ -210,37 +186,6 @@ public class ConfigManager {
 		}
 
 		return isEnabled;
-
-	}
-
-	@SuppressWarnings("deprecation")
-	public Inventory getSupplyDropContents(Inventory dropInventory) {
-
-		List<SupplyDropContents> supplyDropsContents = plugin.getConfigManager().supplyDropsContents;
-
-		for (SupplyDropContents supplyDropsContent : supplyDropsContents) {
-
-			if (Math.random() < supplyDropsContent.itemChance) {
-
-				int i = 0;
-				while (i < supplyDropsContent.itemQuantity) {
-
-					dropInventory.addItem(new ItemStack(supplyDropsContent.itemId, 1));
-
-					i++;
-
-				}
-
-			}
-
-		}
-
-		// always a few nukes and cures
-		dropInventory.addItem(new ItemStack(373, 2, (short) 16396)); // nuke
-		dropInventory.addItem(new ItemStack(373, 2, (short) 16405)); // zombie
-																		// cure
-
-		return dropInventory;
 
 	}
 }

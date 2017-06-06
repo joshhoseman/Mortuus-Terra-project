@@ -9,17 +9,17 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 public class FalloutShelter {
-	
+
 	Location falloutShelterLocation;
 
 	public FalloutShelter(Location falloutShelterLocation, Boolean generateFalloutShelter) {
-		
+
 		this.falloutShelterLocation = falloutShelterLocation;
-		
+
 		if (generateFalloutShelter == true) {
 
 			generateFalloutShelter();
-			
+
 		}
 
 	}
@@ -27,20 +27,21 @@ public class FalloutShelter {
 	public Location getFalloutShelterLocation() {
 
 		return falloutShelterLocation;
-			
+
 	}
 
 	public String getSerializedFalloutShelterObject() {
 
-		return falloutShelterLocation.getWorld().getName() + "~" + falloutShelterLocation.getX() + "~" + falloutShelterLocation.getY() + "~" + falloutShelterLocation.getZ();
-	
+		return falloutShelterLocation.getWorld().getName() + "~" + falloutShelterLocation.getX() + "~"
+				+ falloutShelterLocation.getY() + "~" + falloutShelterLocation.getZ();
+
 	}
-	
+
 	@SuppressWarnings("deprecation")
 	private void generateFalloutShelter() {
-		
+
 		Block centerBlock = falloutShelterLocation.getBlock();
-		
+
 		Block b11 = centerBlock.getRelative(BlockFace.NORTH).getRelative(BlockFace.NORTH).getRelative(BlockFace.WEST);
 		Block b12 = centerBlock.getRelative(BlockFace.NORTH).getRelative(BlockFace.NORTH);
 		Block b13 = centerBlock.getRelative(BlockFace.NORTH).getRelative(BlockFace.NORTH).getRelative(BlockFace.EAST);
@@ -56,8 +57,7 @@ public class FalloutShelter {
 		Block b110 = centerBlock.getRelative(BlockFace.SOUTH).getRelative(BlockFace.WEST);
 		Block b111 = centerBlock.getRelative(BlockFace.SOUTH);
 		Block b112 = centerBlock.getRelative(BlockFace.SOUTH).getRelative(BlockFace.EAST);
-		
-		
+
 		Block centerBlock2 = centerBlock.getRelative(BlockFace.UP);
 
 		Block b21 = centerBlock2.getRelative(BlockFace.NORTH).getRelative(BlockFace.NORTH).getRelative(BlockFace.WEST);
@@ -75,8 +75,7 @@ public class FalloutShelter {
 		Block b210 = centerBlock2.getRelative(BlockFace.SOUTH).getRelative(BlockFace.WEST);
 		Block b211 = centerBlock2.getRelative(BlockFace.SOUTH);
 		Block b212 = centerBlock2.getRelative(BlockFace.SOUTH).getRelative(BlockFace.EAST);
-		
-		
+
 		Block centerBlock3 = centerBlock2.getRelative(BlockFace.UP);
 
 		Block b31 = centerBlock3.getRelative(BlockFace.NORTH).getRelative(BlockFace.NORTH).getRelative(BlockFace.WEST);
@@ -94,8 +93,7 @@ public class FalloutShelter {
 		Block b310 = centerBlock3.getRelative(BlockFace.SOUTH).getRelative(BlockFace.WEST);
 		Block b311 = centerBlock3.getRelative(BlockFace.SOUTH);
 		Block b312 = centerBlock3.getRelative(BlockFace.SOUTH).getRelative(BlockFace.EAST);
-		
-		
+
 		Block centerBlock4 = centerBlock3.getRelative(BlockFace.UP);
 
 		Block b41 = centerBlock4.getRelative(BlockFace.NORTH).getRelative(BlockFace.NORTH).getRelative(BlockFace.WEST);
@@ -113,9 +111,7 @@ public class FalloutShelter {
 		Block b410 = centerBlock4.getRelative(BlockFace.SOUTH).getRelative(BlockFace.WEST);
 		Block b411 = centerBlock4.getRelative(BlockFace.SOUTH);
 		Block b412 = centerBlock4.getRelative(BlockFace.SOUTH).getRelative(BlockFace.EAST);
-		
-		
-		
+
 		b11.setType(Material.BEDROCK);
 		b12.setType(Material.BEDROCK);
 		b13.setType(Material.BEDROCK);
@@ -167,10 +163,10 @@ public class FalloutShelter {
 		b410.setType(Material.BEDROCK);
 		b411.setType(Material.BEDROCK);
 		b412.setType(Material.BEDROCK);
-		
+
 		Chest chest = (Chest) b25.getState();
 		Inventory chestInventory = chest.getBlockInventory();
-		
+
 		chestInventory.clear();
 		chestInventory.addItem(new ItemStack(46, 4));
 		chestInventory.addItem(new ItemStack(42, 2));

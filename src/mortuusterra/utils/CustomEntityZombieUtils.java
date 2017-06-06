@@ -1,9 +1,9 @@
 package mortuusterra.utils;
 
-import java.lang.reflect.Field;
+//import java.lang.reflect.Field;
 
 public class CustomEntityZombieUtils {
-	
+	/*
 	public static Object getPrivateField(String fieldName, Class clazz, Object object) {
 		Field field;
 		Object o = null;
@@ -27,5 +27,5 @@ public class CustomEntityZombieUtils {
 		
 		
 	}
-
+*/
 }

@@ -1,7 +1,13 @@
 package mortuusterra.objects.supplydrops;
 
-public class SupplyDropContents {
-
+public class OLDSupplyDropContents {
+	
+	/*
+	 * This is a old file, go to
+	 * mortuusterra.managers.supplydrops.SupplyDropsManager; 
+	 * For the new File
+	 */
+/*
 	public Integer itemId;
 	public Integer itemQuantity;
 	public Double itemChance;
@@ -12,5 +18,5 @@ public class SupplyDropContents {
 		this.itemQuantity = itemQuantity;
 		this.itemChance = itemChance;
 	}
-
+*/
 }

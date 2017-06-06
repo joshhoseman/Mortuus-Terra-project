@@ -12,27 +12,27 @@ import org.bukkit.plugin.java.JavaPlugin;
 import mortuusterra.listeners.ChatListener;
 import mortuusterra.listeners.ProtectionListener;
 import mortuusterra.listeners.SpawnListener;
-import mortuusterra.listeners.player.PlayerListener;
+//import mortuusterra.listeners.player.PlayerListener;
 import mortuusterra.listeners.radiation.GECKListener;
 import mortuusterra.listeners.world.ChunkListener;
 import mortuusterra.listeners.world.WorldListener;
-import mortuusterra.managers.ConfigManager;
 import mortuusterra.managers.CraftingManager;
-import mortuusterra.managers.FileManager;
 import mortuusterra.managers.HelpManager;
 import mortuusterra.managers.InfoManager;
 import mortuusterra.managers.MiscManager;
 import mortuusterra.managers.PermissionsManager;
 import mortuusterra.managers.PlayerManager;
 import mortuusterra.managers.ProtectionManager;
-import mortuusterra.managers.SupplyDropManager;
 import mortuusterra.managers.TutorialManager;
 import mortuusterra.managers.commands.CommandManager;
 import mortuusterra.managers.commands.ConsoleCommandManager;
+import mortuusterra.managers.files.ConfigManager;
+import mortuusterra.managers.files.FileManager;
 import mortuusterra.managers.ratiation.CraterManager;
 import mortuusterra.managers.ratiation.FalloutShelterManager;
 import mortuusterra.managers.ratiation.GECKManager;
 import mortuusterra.managers.ratiation.RadiationManager;
+import mortuusterra.managers.supplydrops.SupplyDropsManager;
 import mortuusterra.timers.RadiationTimer;
 import mortuusterra.timers.SupplyDropTimer;
 
@@ -46,7 +46,7 @@ public class Main extends JavaPlugin {
 	private ProtectionListener protectionListener;
 	private SpawnListener spawnListener;
 	private ChatListener chatListener;
-	private PlayerListener playerListener;
+	// private PlayerListener playerListener;
 	private WorldListener worldListener;
 	private GECKListener geckListener;
 
@@ -66,7 +66,7 @@ public class Main extends JavaPlugin {
 	private ProtectionManager protectionManager;
 	private PlayerManager playerManager;
 	private RadiationManager radiationManager;
-	private SupplyDropManager supplyDropManager;
+	private SupplyDropsManager supplyDropsManager;
 
 	private CraterManager craterManager;
 	private FalloutShelterManager falloutShelterManager;
@@ -78,9 +78,9 @@ public class Main extends JavaPlugin {
 		registerListeners();
 
 		getServer().getScheduler().scheduleSyncRepeatingTask(this, new RadiationTimer(this), 0L, 20L);
-		getServer().getScheduler().scheduleSyncRepeatingTask(this, new SupplyDropTimer(this), 0L, 24000L);
+		getServer().getScheduler().scheduleSyncRepeatingTask(this, new SupplyDropTimer(this), 0L, 20L); //the time for this is just for a test
 
-		//saveDefaultConfig();
+		// saveDefaultConfig();
 
 		mkdir();
 		getFileManager().loadFiles();
@@ -115,11 +115,11 @@ public class Main extends JavaPlugin {
 		permissionsManager = new PermissionsManager(this);
 		craftingManager = new CraftingManager(this);
 		// worldManager = new WorldManager(instance);
-	    miscManager = new MiscManager(this);
+		miscManager = new MiscManager(this);
 		protectionManager = new ProtectionManager(this);
 		playerManager = new PlayerManager(this);
 		radiationManager = new RadiationManager(this);
-		supplyDropManager = new SupplyDropManager(this);
+		supplyDropsManager = new SupplyDropsManager(this);
 
 		craterManager = new CraterManager(this);
 		falloutShelterManager = new FalloutShelterManager(this);
@@ -132,7 +132,7 @@ public class Main extends JavaPlugin {
 		protectionListener = new ProtectionListener(this);
 		spawnListener = new SpawnListener(this);
 		chatListener = new ChatListener(this);
-		playerListener = new PlayerListener(this);
+		// playerListener = new PlayerListener(this);
 		worldListener = new WorldListener(this);
 		geckListener = new GECKListener(this);
 
@@ -141,7 +141,8 @@ public class Main extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(this.spawnListener, this);
 		getServer().getPluginManager().registerEvents(this.chunkListener, this);
 		getServer().getPluginManager().registerEvents(this.chatListener, this);
-		getServer().getPluginManager().registerEvents(this.playerListener, this);
+		// getServer().getPluginManager().registerEvents(this.playerListener,
+		// this);
 		getServer().getPluginManager().registerEvents(this.worldListener, this);
 		getServer().getPluginManager().registerEvents(this.geckListener, this);
 
@@ -162,7 +163,7 @@ public class Main extends JavaPlugin {
 		return configManager;
 	}
 
-	 public CommandManager getCommandManager() {
+	public CommandManager getCommandManager() {
 
 		return commandManager;
 
@@ -178,16 +179,17 @@ public class Main extends JavaPlugin {
 
 		return infoManager;
 
-	} 
+	}
 
 	public FileManager getFileManager() {
 
 		return fileManager;
 
 	}
-	public SupplyDropManager getSupplyDropManager() {
 
-		return supplyDropManager;
+	public SupplyDropsManager getSupplyDropsManager() {
+
+		return supplyDropsManager;
 
 	}
 
@@ -208,13 +210,14 @@ public class Main extends JavaPlugin {
 		return permissionsManager;
 
 	}
-/**
-	public WorldManager getWorldManager() {
 
-		return worldManager;
-
-	}
-**/
+	/**
+	 * public WorldManager getWorldManager() {
+	 * 
+	 * return worldManager;
+	 * 
+	 * }
+	 **/
 	public CraftingManager getCraftingManager() {
 
 		return craftingManager;
@@ -244,7 +247,7 @@ public class Main extends JavaPlugin {
 		return radiationManager;
 
 	}
-	
+
 	public CraterManager getCraterManager() {
 
 		return craterManager;
@@ -269,12 +272,13 @@ public class Main extends JavaPlugin {
 
 	}
 
-	public PlayerListener getPlayerListener() {
-
-		return playerListener;
-
-	}
-
+	/*
+	 * public PlayerListener getPlayerListener() {
+	 * 
+	 * return playerListener;
+	 * 
+	 * }
+	 */
 	public WorldListener getWorldListener() {
 
 		return worldListener;

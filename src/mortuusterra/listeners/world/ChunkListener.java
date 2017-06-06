@@ -39,6 +39,7 @@ private final Main plugin;
 		int z = chunk.getZ() * 16;
 		int y = chunk.getWorld().getHighestBlockYAt(x + 8, z + 2);
 
+		
 		Location eventLocation = new Location(event.getWorld(), x + 8, y, z + 8);
 
 		if (plugin.getConfigManager().generateFalloutSheltersEnabled == true) {

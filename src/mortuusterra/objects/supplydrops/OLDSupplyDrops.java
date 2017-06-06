@@ -1,19 +1,16 @@
 package mortuusterra.objects.supplydrops;
 
-import org.bukkit.Location;
-import org.bukkit.block.Block;
-import org.bukkit.block.Chest;
-import org.bukkit.block.Sign;
-import org.bukkit.inventory.Inventory;
 
-import mortuusterra.Main;
+public class OLDSupplyDrops {
 
-public class SupplyDrops {
-
+	/*
+	 * This is a old file, go to
+	 * mortuusterra.managers.supplydrops.SupplyDropsManager; For the new File
+	 */
+/*
 	Main plugin;
 
 	public SupplyDrops(Main plugin, Chest dropChest, Location dropLocation, Inventory dropInventory) {
-		this.plugin = plugin;
 
 		this.plugin = plugin;
 
@@ -92,5 +89,5 @@ public class SupplyDrops {
 	public void setIsEmpty(boolean isEmpty) {
 		this.isEmpty = isEmpty;
 	}
-
+*/
 }
