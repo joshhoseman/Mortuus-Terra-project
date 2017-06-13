@@ -78,7 +78,7 @@ public class Main extends JavaPlugin {
 		registerListeners();
 
 		new RadiationTimer(this).runTaskTimer(this, 0L, 20L);
-		new SupplyDropTimer(this).runTaskTimer(this, 0L, 20L);
+		new SupplyDropTimer(this).runTaskTimer(this, 0L, 1200L);
 		// saveDefaultConfig();
 
 		mkdir();
