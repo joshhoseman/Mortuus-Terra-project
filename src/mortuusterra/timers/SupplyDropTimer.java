@@ -2,7 +2,9 @@ package mortuusterra.timers;
 
 import mortuusterra.Main;
 
-public class SupplyDropTimer implements Runnable {
+import org.bukkit.scheduler.BukkitRunnable;
+
+public class SupplyDropTimer implements BukkitRunnable {
 	
 
 	Main plugin;
