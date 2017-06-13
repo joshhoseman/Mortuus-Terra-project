@@ -77,9 +77,8 @@ public class Main extends JavaPlugin {
 		initiateManagers();
 		registerListeners();
 
-		getServer().getScheduler().scheduleSyncRepeatingTask(this, new RadiationTimer(this), 0L, 20L);
-		getServer().getScheduler().scheduleSyncRepeatingTask(this, new SupplyDropTimer(this), 0L, 20L); //the time for this is just for a test
-
+		new RadiationTimer(this).runTaskTimer(this, 0L, 20L);
+		new SupplyDropTimer(this).runTaskTimer(this, 0L, 20L);
 		// saveDefaultConfig();
 
 		mkdir();
@@ -88,7 +87,6 @@ public class Main extends JavaPlugin {
 		logger.info("MortuusTerra has been enabled");
 
 		logger.info("|---------|");
-
 	}
 
 	public void onDisable() {
@@ -124,7 +122,6 @@ public class Main extends JavaPlugin {
 		craterManager = new CraterManager(this);
 		falloutShelterManager = new FalloutShelterManager(this);
 		geckManager = new GECKManager(this);
-
 	}
 
 	private void registerListeners() {
