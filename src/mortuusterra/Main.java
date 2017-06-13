@@ -35,6 +35,7 @@ import mortuusterra.managers.ratiation.RadiationManager;
 import mortuusterra.managers.supplydrops.SupplyDropsManager;
 import mortuusterra.timers.RadiationTimer;
 import mortuusterra.timers.SupplyDropTimer;
+import mortuusterra.timers.MeteorStrikeTimer;
 
 public class Main extends JavaPlugin {
 	@SuppressWarnings("unused")
