@@ -4,10 +4,11 @@ import org.bukkit.block.Biome;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+import org.bukkit.scheduler.BukkitRunnable;
 
 import mortuusterra.Main;
 
-public class RadiationTimer implements Runnable {
+public class RadiationTimer implements BukkitRunnable {
 
 	Main plugin;
 
