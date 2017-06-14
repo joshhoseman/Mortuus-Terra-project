@@ -19,7 +19,7 @@ public class BlockFormListener implements Listener {
 	}
 	
 	@EventHandler
-	public void playerDestroysBlock(EntityDamageByEntityEvent event) {
+	public void entityDamageEntityEvent(EntityDamageByEntityEvent event) {
     		if (event.getDamager() instanceof FallingBlock && event.getEntity() instanceof Player
 				&& event.getDamager().getCustomName().equals(MeteorStrikeTimer.meteorName)) {
 			Player player = (Player) event.getEntity();
@@ -28,7 +28,7 @@ public class BlockFormListener implements Listener {
 	}
 	
 	@EventHandler
-	public void playerDestroysBlock(EntityChangeBlockEvent event) {
+	public void entityChangeBlockEvent(EntityChangeBlockEvent event) {
     		if (event.getEntity() instanceof FallingBlock && event.getEntity().getCustomName().equals(MeteorStrikeTimer.meteorName)) {
 			event.getBlock().setType(Material.IRON_ORE);
 			event.setCancelled(true);
