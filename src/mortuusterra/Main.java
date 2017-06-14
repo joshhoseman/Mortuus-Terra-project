@@ -15,7 +15,8 @@ import mortuusterra.listeners.SpawnListener;
 //import mortuusterra.listeners.player.PlayerListener;
 import mortuusterra.listeners.radiation.GECKListener;
 import mortuusterra.listeners.world.ChunkListener;
-import mortuusterra.listeners.world.WorldListener;
+import mortuusterra.listeners.world.WorldListener;;
+import mortuusterra.listeners.world.BlockFormListener;
 import mortuusterra.managers.CraftingManager;
 import mortuusterra.managers.HelpManager;
 import mortuusterra.managers.InfoManager;
@@ -50,6 +51,7 @@ public class Main extends JavaPlugin {
 	// private PlayerListener playerListener;
 	private WorldListener worldListener;
 	private GECKListener geckListener;
+	private BlockFormListener blockFormListener;
 
 	private CommandManager commandManager;
 	private ConsoleCommandManager consoleCommandManager;
@@ -134,6 +136,7 @@ public class Main extends JavaPlugin {
 		// playerListener = new PlayerListener(this);
 		worldListener = new WorldListener(this);
 		geckListener = new GECKListener(this);
+		blockFormListener = new BlockFormListener(this);
 
 		// event listeners
 		getServer().getPluginManager().registerEvents(this.protectionListener, this);
@@ -144,6 +147,7 @@ public class Main extends JavaPlugin {
 		// this);
 		getServer().getPluginManager().registerEvents(this.worldListener, this);
 		getServer().getPluginManager().registerEvents(this.geckListener, this);
+		getServer().getPluginManager().regusterEvents(this.blockFormListener, this)
 
 	}
 
@@ -282,6 +286,12 @@ public class Main extends JavaPlugin {
 
 		return worldListener;
 
+	}
+	
+	public BlockFormListener getBlockFormListener() {
+		
+		return blockFormListener;
+		
 	}
 
 	@EventHandler
