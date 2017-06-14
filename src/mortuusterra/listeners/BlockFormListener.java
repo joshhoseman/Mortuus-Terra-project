@@ -19,9 +19,9 @@ public class BlockFormListener implements Listener {
 	
 	@EventHandler
 	public void playerDestroysBlock(EntityChangeBlockEvent event) {
-    if (event.getEntity() instanceof FallingBlock && event.getEntity().getCustomName().equals(MeteorStrikeTimer.meteorName)) {
+    		if (event.getEntity() instanceof FallingBlock && event.getEntity().getCustomName().equals(MeteorStrikeTimer.meteorName)) {
 			event.getBlock().setType(Material.IRON_ORE);
 			event.setCancelled(true);
 		}
-  }
+	}
 }
