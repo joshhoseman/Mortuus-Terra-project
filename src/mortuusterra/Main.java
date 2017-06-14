@@ -74,6 +74,10 @@ public class Main extends JavaPlugin {
 	private CraterManager craterManager;
 	private FalloutShelterManager falloutShelterManager;
 	private GECKManager geckManager;
+	
+	private RadiationTimer radiationTimer;
+	private SupplyDropTimer supplyDropTimer;
+	private MeteorStrikeTimer meteorStrikeTimer;
 
 	public void onEnable() {
 		logger.info("|---------|");
@@ -98,7 +102,9 @@ public class Main extends JavaPlugin {
 
 		getFileManager().saveFiles();
 
-		getServer().getScheduler().cancelTasks(this);
+		radiatoinTimer.cancel();
+		supplyDropTimer.cancel();
+		meteorStrikeTimer.cancel();
 
 		logger.info("|----------|");
 	}
