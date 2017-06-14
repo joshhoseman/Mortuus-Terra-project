@@ -8,7 +8,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 import mortuusterra.Main;
 
-public class RadiationTimer implements BukkitRunnable {
+public class RadiationTimer extends BukkitRunnable {
 
 	Main plugin;
 

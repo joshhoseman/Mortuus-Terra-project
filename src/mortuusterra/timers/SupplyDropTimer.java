@@ -4,7 +4,7 @@ import mortuusterra.Main;
 
 import org.bukkit.scheduler.BukkitRunnable;
 
-public class SupplyDropTimer implements BukkitRunnable {
+public class SupplyDropTimer extends BukkitRunnable {
 	
 
 	Main plugin;

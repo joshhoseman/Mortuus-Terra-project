@@ -10,13 +10,13 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import mortuusterra.listeners.ChatListener;
+import mortuusterra.listeners.EntityListener;
 import mortuusterra.listeners.ProtectionListener;
 import mortuusterra.listeners.SpawnListener;
 //import mortuusterra.listeners.player.PlayerListener;
 import mortuusterra.listeners.radiation.GECKListener;
 import mortuusterra.listeners.world.ChunkListener;
-import mortuusterra.listeners.world.WorldListener;;
-import mortuusterra.listeners.world.EntityListener;
+import mortuusterra.listeners.world.WorldListener;
 import mortuusterra.managers.CraftingManager;
 import mortuusterra.managers.HelpManager;
 import mortuusterra.managers.InfoManager;
@@ -147,7 +147,7 @@ public class Main extends JavaPlugin {
 		// this);
 		getServer().getPluginManager().registerEvents(this.worldListener, this);
 		getServer().getPluginManager().registerEvents(this.geckListener, this);
-		getServer().getPluginManager().regusterEvents(this.blockFormListener, this)
+		getServer().getPluginManager().registerEvents(this.entityListener, this);
 
 	}
 
@@ -288,7 +288,7 @@ public class Main extends JavaPlugin {
 
 	}
 	
-	public BlockFormListener getEntityListener() {
+	public EntityListener getEntityListener() {
 		
 		return entityListener;
 		

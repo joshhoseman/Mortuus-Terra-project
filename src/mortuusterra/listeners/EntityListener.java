@@ -1,5 +1,6 @@
 package mortuusterra.listeners;
 
+import org.bukkit.Material;
 import org.bukkit.entity.FallingBlock;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -10,13 +11,15 @@ import org.bukkit.event.entity.EntityChangeBlockEvent;
 import mortuusterra.timers.MeteorStrikeTimer;
 import mortuusterra.Main;
 
-public class BlockFormListener implements Listener {
-
-	private final Main plugin;
-	
-	public BlockFormEvent(Main plugin) {
+public class EntityListener implements Listener {
+	public EntityListener(Main plugin) {
 		this.plugin = plugin;
 	}
+
+	@SuppressWarnings("unused")
+	private final Main plugin;
+	
+	
 	
 	@EventHandler
 	public void entityDamageEntityEvent(EntityDamageByEntityEvent event) {

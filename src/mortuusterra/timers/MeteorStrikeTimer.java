@@ -3,6 +3,7 @@ package mortuusterra.timers;
 import mortuusterra.Main;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
@@ -11,10 +12,11 @@ import org.bukkit.entity.FallingBlock;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
-public class MeteorStrikeTimer implements BukkitRunnable {
+public class MeteorStrikeTimer extends BukkitRunnable {
 	
 	public final static String meteorName = "METEOR";
 	private Main plugin;
+	private long A = 10;
 
 	public MeteorStrikeTimer(Main plugin) {
 		this.plugin = plugin;
@@ -43,18 +45,19 @@ public class MeteorStrikeTimer implements BukkitRunnable {
 						this.cancel();
 					}
 				}	
-			}.runTaskTimer(this, 10, 10);
+			}.runTaskTimer(plugin, A, A);
 			
 			int x = ((int) local.getX());
 			int z = ((int) local.getZ());
 			String msg = ChatColor.translateAlternateColorCodes('&', "&4Meteor shower at: X=&6" + x + "&4, Z=&6" + z);
 			
-			for (Player player : Bukkit.getOnlinePlayers()) {
-				player.sendMessage(msg);	
+			for (Player onlineplayer : Bukkit.getOnlinePlayers()) {
+				onlineplayer.sendMessage(msg);	
 			}
 		}
 	}
 	
+	@SuppressWarnings("deprecation")
 	public FallingBlock createMeteor(Location base, int radius) {
 		World world = base.getWorld();
 		double xLocation = (Math.random() * (radius * 2)) - radius;
