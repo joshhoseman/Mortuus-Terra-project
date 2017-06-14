@@ -12,7 +12,8 @@ import org.bukkit.util.Vector;
 
 public class MeteorStrikeTimer implements BukkitRunnable {
 	
-	Main plugin;
+	public final static String meteorName = "METEOR";
+	private Main plugin;
 
 	public MeteorStrikeTimer(Main plugin) {
 		this.plugin = plugin;
@@ -39,7 +40,7 @@ public class MeteorStrikeTimer implements BukkitRunnable {
 		Vector vector = new Vector(xVector, yVector, zVector);
 		
 		meteor.setVelocity(vector);
-		meteor.setCustomName("METEOR");
+		meteor.setCustomName(meteorName);
 		meteor.setDropItem(false);
 		meteor.setHurtEntities(true);
 		return meteor;
