@@ -47,9 +47,10 @@ public class MeteorStrikeTimer implements BukkitRunnable {
 			
 			int x = ((int) local.getX());
 			int z = ((int) local.getZ());
+			String msg = ChatColor.translateAlternateColorCodes('&', "&4Meteor shower at: X=&6" + x + "&4, Z=&6" + z);
 			
 			for (Player player : Bukkit.getOnlinePlayers()) {
-				player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&4Meteor shower at: X=&6" + x + "&4, Z=&6" + z));	
+				player.sendMessage(msg);	
 			}
 		}
 	}
