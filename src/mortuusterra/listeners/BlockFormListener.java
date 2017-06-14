@@ -9,7 +9,7 @@ import org.bukkit.event.entity.EntityChangeBlockEvent;
 import mortuusterra.timers.MeteorStrikeTimer;
 import mortuusterra.Main;
 
-public class BlockFormEvent implements Listener {
+public class BlockFormListener implements Listener {
 
 	private final Main plugin;
 	
