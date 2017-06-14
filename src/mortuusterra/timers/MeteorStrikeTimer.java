@@ -22,33 +22,35 @@ public class MeteorStrikeTimer implements BukkitRunnable {
 	}
 
 	public void run() {
-		int randomPlayer = (int) Math.random() * Bukkit.getOnlinePlayers().size();
-		Object[] players = Bukkit.getOnlinePlayers().toArray();
-		
-		Player player = (Player) players[randomPlayer];
-		Location local = player.getLocation();
-		
-		new BukkitRunnable() {
+		int randomPlayer = (int) Math.random() * Bukkit.getOnlinePlayers().size() - 1;
+		if (randomPlayer >= 0) {
+			Object[] players = Bukkit.getOnlinePlayers().toArray();
 			
-			int times = 0;
+			Player player = (Player) players[randomPlayer];
+			Location local = player.getLocation();
+		
+			new BukkitRunnable() {
 			
-			@Override
-			public void run() {
-				times++;
-				for (int i = 0; i < 25; i++) {
-					createMeteor(local, 10);
-				}
-				if (times > 9) {
-					this.cancel();
-				}
+				int times = 0;
+			
+				@Override
+				public void run() {
+					times++;
+					for (int i = 0; i < 25; i++) {
+						createMeteor(local, 10);
+					}
+					if (times > 9) {
+						this.cancel();
+					}
+				}	
+			}.runTaskTimer(this, 10, 10);
+			
+			int x = ((int) local.getX());
+			int z = ((int) local.getZ());
+			
+			for (Player player : Bukkit.getOnlinePlayers()) {
+				player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&4Meteor shower at: X=&6" + x + "&4, Z=&6" + z));	
 			}
-		}.runTaskTimer(this, 10, 10);
-		
-		int x = ((int) local.getX());
-		int z = ((int) local.getZ());
-		
-		for (Player player : Bukkit.getOnlinePlayers()) {
-			player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&4Meteor shower at: X=&6" + x + "&4, Z=&6" + z));	
 		}
 	}
 	
