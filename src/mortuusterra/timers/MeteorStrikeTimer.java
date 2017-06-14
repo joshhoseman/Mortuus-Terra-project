@@ -6,6 +6,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
+import org.bukkit.entity.Player;
 import org.bukkit.entity.FallingBlock;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
@@ -21,8 +22,34 @@ public class MeteorStrikeTimer implements BukkitRunnable {
 	}
 
 	public void run() {
-		// TODO
+		int randomPlayer = (int) Math.random() * Bukkit.getOnlinePlayers().size();
+		Object[] players = Bukkit.getOnlinePlayers().toArray();
 		
+		Player player = (Player) players[randomPlayer];
+		Location local = player.getLocation();
+		
+		new BukkitRunnable() {
+			
+			int times = 0;
+			
+			@Override
+			public void run() {
+				times++;
+				for (int i = 0; i < 25; i++) {
+					createMeteor(local, 10);
+				}
+				if (times > 9) {
+					this.cancel();
+				}
+			}
+		}.runTaskTimer(this, 10, 10);
+		
+		int x = ((int) local.getX());
+		int z = ((int) local.getZ());
+		
+		for (Player player : Bukkit.getOnlinePlayers()) {
+			player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&4Meteor shower at: X=&6" + x + "&4, Z=&6" + z));	
+		}
 	}
 	
 	public FallingBlock createMeteor(Location base, int radius) {
