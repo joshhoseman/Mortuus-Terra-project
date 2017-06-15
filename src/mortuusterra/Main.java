@@ -84,9 +84,9 @@ public class Main extends JavaPlugin {
 		initiateManagers();
 		registerListeners();
 
-		new RadiationTimer(this).runTaskTimer(this, 0L, 20L);
-		new SupplyDropTimer(this).runTaskTimer(this, 0L, 20L);
-		new MeteorStrikeTimer(this).runTaskTimer(this, 0L, 1200L);
+		radiationTimer = new RadiationTimer(this).runTaskTimer(this, 0L, 20L);
+		supplyDropTimer = new SupplyDropTimer(this).runTaskTimer(this, 0L, 20L);
+		meteorStrikeTimer = new MeteorStrikeTimer(this).runTaskTimer(this, 0L, 1200L);
 		// saveDefaultConfig();
 
 		mkdir();
