@@ -8,7 +8,11 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+<<<<<<< HEAD
 import org.bukkit.scheduler.BukkitTask;
+=======
+impot org.bukkit.scheduler.BukkitTask;
+>>>>>>> origin/master
 
 import mortuusterra.listeners.ChatListener;
 import mortuusterra.listeners.EntityListener;
