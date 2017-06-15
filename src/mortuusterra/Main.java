@@ -102,7 +102,7 @@ public class Main extends JavaPlugin {
 
 		getFileManager().saveFiles();
 
-		radiatoinTimer.cancel();
+		radiationTimer.cancel();
 		supplyDropTimer.cancel();
 		meteorStrikeTimer.cancel();
 
