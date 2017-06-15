@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+impot org.bukkit.scheduler.BukkitTask;
 
 import mortuusterra.listeners.ChatListener;
 import mortuusterra.listeners.EntityListener;
@@ -75,9 +76,9 @@ public class Main extends JavaPlugin {
 	private FalloutShelterManager falloutShelterManager;
 	private GECKManager geckManager;
 	
-	private RadiationTimer radiationTimer;
-	private SupplyDropTimer supplyDropTimer;
-	private MeteorStrikeTimer meteorStrikeTimer;
+	private BukkitTask radiationTimer;
+	private BukkitTask supplyDropTimer;
+	private BukkitTask meteorStrikeTimer;
 
 	public void onEnable() {
 		logger.info("|---------|");
