@@ -46,7 +46,7 @@ public class SupplyDropsManager {
 		world = this.world;
 
 		droplocation = new Location(world, x, y, z);
-		plugin.getServer().getConsoleSender().sendMessage(ChatColor.GRAY + "Location set at "+x+y+z+"  ");
+		plugin.getServer().getConsoleSender().sendMessage(ChatColor.GRAY + "Location set at "+ x + " " + y+ " " + z+"  ");
 		plugin.getServer().getConsoleSender().sendMessage(ChatColor.GRAY + "...");
 	}
 
@@ -56,7 +56,11 @@ public class SupplyDropsManager {
 		plugin.getServer().getConsoleSender().sendMessage(ChatColor.DARK_RED + "...");
 		this.dropInventory = ChestInv;
 
-		dropLocation.getBlock().setType(Material.CHEST);
+		
+		String blockType = this.dropLocation.getBlock().getType().toString();
+		plugin.getServer().getConsoleSender().sendMessage(ChatColor.DARK_RED + blockType);
+		
+		//this.dropLocation.getBlock().setType(Material.CHEST);
 		
 		//this.getdropLocation().getBlock().setType(Material.CHEST);
 		
