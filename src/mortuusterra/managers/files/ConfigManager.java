@@ -151,6 +151,10 @@ public class ConfigManager {
 		radiationDamageIncreaseFromStorms = config
 				.getDouble("settings.radiation.damage.damage-chance.increase-from-storms");
 
+		// supply drops
+		supplyDropsEnabled = config.getBoolean("settings.supply-drops.enabled");
+		supplyDropsChance = config.getDouble("settings.supply-drops.supply-drop-chance");
+
 		// survival kits
 		survivalKitsEnabled = config.getBoolean("settings.survival-kits.enabled");
 		survivalKitsHoursBetween = config.getInt("settings.survival-kits.hours-between-kits");

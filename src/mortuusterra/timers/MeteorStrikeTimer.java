@@ -20,12 +20,14 @@ public class MeteorStrikeTimer extends BukkitRunnable {
 
 	public MeteorStrikeTimer(Main plugin) {
 		this.plugin = plugin;
+		plugin.getServer().getConsoleSender().sendMessage(ChatColor.DARK_RED + "Test text 1");
 		run();
 	}
 
 	public void run() {
 		int randomPlayer = (int) Math.random() * Bukkit.getOnlinePlayers().size() - 1;
 		if (randomPlayer >= 0) {
+			plugin.getServer().getConsoleSender().sendMessage(ChatColor.DARK_RED + "Test text 2");
 			Object[] players = Bukkit.getOnlinePlayers().toArray();
 			
 			Player player = (Player) players[randomPlayer];
@@ -37,21 +39,27 @@ public class MeteorStrikeTimer extends BukkitRunnable {
 			
 				@Override
 				public void run() {
+					plugin.getServer().getConsoleSender().sendMessage(ChatColor.DARK_RED + "Test text 3");
 					times++;
 					for (int i = 0; i < 25; i++) {
+						plugin.getServer().getConsoleSender().sendMessage(ChatColor.DARK_RED + "Test tex 5");
 						createMeteor(local, 10);
 					}
 					if (times > 9) {
+						plugin.getServer().getConsoleSender().sendMessage(ChatColor.DARK_RED + "Test text 6");
 						this.cancel();
 					}
 				}	
 			}.runTaskTimer(plugin, A, A);
+			
+			plugin.getServer().getConsoleSender().sendMessage(ChatColor.DARK_RED + "Test text 7");
 			
 			int x = ((int) local.getX());
 			int z = ((int) local.getZ());
 			String msg = ChatColor.translateAlternateColorCodes('&', "&4Meteor shower at: X=&6" + x + "&4, Z=&6" + z);
 			
 			for (Player onlineplayer : Bukkit.getOnlinePlayers()) {
+				plugin.getServer().getConsoleSender().sendMessage(ChatColor.DARK_RED + "Test tex 8");
 				onlineplayer.sendMessage(msg);	
 			}
 		}
@@ -59,6 +67,7 @@ public class MeteorStrikeTimer extends BukkitRunnable {
 	
 	@SuppressWarnings("deprecation")
 	public FallingBlock createMeteor(Location base, int radius) {
+		plugin.getServer().getConsoleSender().sendMessage(ChatColor.DARK_RED + "Test tex 8");
 		World world = base.getWorld();
 		double xLocation = (Math.random() * (radius * 2)) - radius;
 		double yLocation = base.getY() + 255;

@@ -45,7 +45,7 @@ settings:
           chance: 0.35
   supply-drops:
     enabled: true
-    supply-drop-chance: .05
+    supply-drop-chance: 100
     items:
       0:
         item-id: 319

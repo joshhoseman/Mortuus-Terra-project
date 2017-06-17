@@ -51,6 +51,7 @@ public class WorldListener implements Listener {
 	}
 
 	public void deliverSupplyDrop(World world) {
+		plugin.getServer().getConsoleSender().sendMessage(ChatColor.DARK_RED + "Test text H");
 		Location droplocation = plugin.getSupplyDropsManager().getdropLocation();
 		Inventory ChestInv = plugin.getSupplyDropsManager().getDropInventory();
 
@@ -77,11 +78,16 @@ public class WorldListener implements Listener {
 	}
 
 	public void deliverSupplyDrop() {
+		plugin.getServer().getConsoleSender().sendMessage(ChatColor.DARK_RED + "Test text C");
 		if (plugin.getConfigManager().supplyDropsEnabled == true && plugin.getConfigManager().supplyDropsChance > 0) {
+			plugin.getServer().getConsoleSender().sendMessage(ChatColor.DARK_RED + "Test text D");
 			for (World world : plugin.getServer().getWorlds()) {
+				plugin.getServer().getConsoleSender().sendMessage(ChatColor.DARK_RED + "Test text E");
 				if ((plugin.getConfigManager().isWorldEnabled(world.getName()) == true)) {
+					plugin.getServer().getConsoleSender().sendMessage(ChatColor.DARK_RED + "Test text F");
 					double ran = Math.random();
 					if (ran < plugin.getConfigManager().supplyDropsChance) {
+						plugin.getServer().getConsoleSender().sendMessage(ChatColor.DARK_RED + "Test text G");
 						deliverSupplyDrop(world);
 					}
 				}

@@ -8,12 +8,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
-<<<<<<< HEAD
 import org.bukkit.scheduler.BukkitTask;
-=======
-impot org.bukkit.scheduler.BukkitTask;
->>>>>>> origin/master
-
 import mortuusterra.listeners.ChatListener;
 import mortuusterra.listeners.EntityListener;
 import mortuusterra.listeners.ProtectionListener;
@@ -91,7 +86,14 @@ public class Main extends JavaPlugin {
 
 		radiationTimer = new RadiationTimer(this).runTaskTimer(this, 0L, 20L);
 		supplyDropTimer = new SupplyDropTimer(this).runTaskTimer(this, 0L, 20L);
-		meteorStrikeTimer = new MeteorStrikeTimer(this).runTaskTimer(this, 0L, 1200L);
+		
+		meteorStrikeTimer = new MeteorStrikeTimer(this).runTaskTimer(this, 0L, 20L); 
+		/*
+		 *  
+		 * the above timer is just a test value so i can test if it works the real value is 1200
+		 *
+		 */
+		
 		// saveDefaultConfig();
 
 		mkdir();
