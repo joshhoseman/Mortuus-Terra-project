@@ -38,7 +38,7 @@ public class SupplyDropsManager {
 		plugin.getServer().getConsoleSender().sendMessage(ChatColor.GRAY + "...");
 		plugin.getServer().getConsoleSender().sendMessage(ChatColor.GRAY + "Setting Drop Location");
 		plugin.getServer().getConsoleSender().sendMessage(ChatColor.DARK_RED + "...");
-		droplocation = this.dropLocation;
+		this.dropLocation = droplocation;
 
 		this.x = ran.nextInt();
 		this.z = ran.nextInt();
@@ -62,7 +62,6 @@ public class SupplyDropsManager {
 		
 		//this.dropLocation.getBlock().setType(Material.CHEST);
 		
-		//this.getdropLocation().getBlock().setType(Material.CHEST);
 		
 
 		ChestInv.clear();
