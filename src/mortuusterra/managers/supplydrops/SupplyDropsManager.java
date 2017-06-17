@@ -29,7 +29,7 @@ public class SupplyDropsManager {
 	private Location dropLocation;
 	private boolean isEmpty;
 
-	public ItemStack Inv; // set the actual Inv in SupplyDropInvManager
+	public static ItemStack Inv; // set the actual Inv in SupplyDropInvManager
 
 	// Step One
 	public void setDropLocation(Location droplocation, World world) {
@@ -43,7 +43,7 @@ public class SupplyDropsManager {
 		this.x = ran.nextInt();
 		this.z = ran.nextInt();
 		this.y = world.getHighestBlockYAt(x, z);
-		world = droplocation.getWorld();
+		world = this.world;
 
 		droplocation = new Location(world, x, y, z);
 		plugin.getServer().getConsoleSender().sendMessage(ChatColor.GRAY + "Location set at "+x+y+z+"  ");

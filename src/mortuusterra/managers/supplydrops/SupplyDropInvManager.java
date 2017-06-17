@@ -8,10 +8,12 @@ import org.bukkit.inventory.ItemStack;
 
 import mortuusterra.Main;
 
-public class SupplyDropInvManager extends SupplyDropsManager {
+public class SupplyDropInvManager {
+
+	private Main plugin;
 
 	public SupplyDropInvManager(Main plugin) {
-		super(plugin);
+		this.plugin = plugin;
 	}
 
 	private String name;
@@ -29,7 +31,7 @@ public class SupplyDropInvManager extends SupplyDropsManager {
 			}
 			items.put(name, chance);
 
-			Inv = new ItemStack(Material.valueOf(name));
+			SupplyDropsManager.Inv = new ItemStack(Material.valueOf(name));
 		}
 		plugin.getServer().getConsoleSender().sendMessage("The Supply Drop has been filled with loot!");
 		plugin.getServer().getConsoleSender().sendMessage("Go get it befor some one else grabs the good loot!");
